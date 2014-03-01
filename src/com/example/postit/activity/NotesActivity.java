@@ -4,9 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.example.postit.R;
-
-import fragments.AddNoteFragment;
-import fragments.NotesFragment;
+import com.example.postit.fragments.AddNoteFragment;
+import com.example.postit.fragments.NotesFragment;
 
 import android.app.Activity;
 import android.app.Fragment;
