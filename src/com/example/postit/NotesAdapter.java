@@ -2,6 +2,8 @@ package com.example.postit;
 
 import java.util.ArrayList;
 
+import com.example.postit.fragments.NotesFragment;
+
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
@@ -40,6 +42,7 @@ public class NotesAdapter extends BaseAdapter {
 	
 	public static void addItem(String title, String note) {
 		data.add(new NoteItem(title, note));
+		NotesFragment.notesAdapter.notifyDataSetChanged();
 	}
 	
 	@Override
@@ -55,11 +58,10 @@ public class NotesAdapter extends BaseAdapter {
 		if(convertView == null) {
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
 			convertView = inflater.inflate(R.layout.note_item_text, parent, false);
-//			convertView = new TextView(context);
 			
 			holder = new NoteViewHolder();
+			holder.tvNoteTitle = (TextView) convertView.findViewById(R.id.tvNoteTitle);
 			holder.tvNote = (TextView) convertView.findViewById(R.id.tvNote);
-//			holder.tvNote = (TextView) convertView;
 			
 			convertView.setTag(holder);
 		}
@@ -67,11 +69,15 @@ public class NotesAdapter extends BaseAdapter {
 			holder = (NoteViewHolder) convertView.getTag();
 		}
 		
-//		TextView tvNote = (TextView) convertView.findViewById(R.id.tvNote);
-//		tvNote.setText(data.get(position).getNote());
+		if(!data.get(position).getTitle().equals("")) {
+			holder.tvNoteTitle.setText(data.get(position).getTitle());
+			holder.tvNoteTitle.setVisibility(View.VISIBLE);
+		}
+		else {
+			holder.tvNoteTitle.setVisibility(View.GONE);
+		}
+		
 		holder.tvNote.setText(data.get(position).getNote());
-//		Log.d(LOG_TAG, "position: " + String.valueOf(position));
-//		Log.d(LOG_TAG, "note: " + String.valueOf(data.get(position).getNote()));
 		
 		return convertView;
 	}

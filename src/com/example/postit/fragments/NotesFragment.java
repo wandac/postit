@@ -22,7 +22,7 @@ public class NotesFragment extends Fragment implements OnClickListener {
 	private Button btnAddNote, btnAddList, btnAddPicture;
 	private GridView gvNotes;
 	
-	private NotesAdapter notesAdapter;
+	public static NotesAdapter notesAdapter;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,8 +53,6 @@ public class NotesFragment extends Fragment implements OnClickListener {
 	@Override
 	public void onResume() {
 		super.onResume();
-		
-		notesAdapter.notifyDataSetChanged();
 	}
 
 	@Override

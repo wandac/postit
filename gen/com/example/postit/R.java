@@ -29,6 +29,7 @@ public final class R {
         public static final int grid_horizontal_spacing=0x7f060002;
         public static final int grid_vertical_margin=0x7f060004;
         public static final int grid_vertical_spacing=0x7f060003;
+        public static final int note_padding=0x7f060005;
     }
     public static final class drawable {
         public static final int drawer_shadow=0x7f020000;
@@ -36,8 +37,8 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_search=0x7f0b000f;
-        public static final int action_settings=0x7f0b000e;
+        public static final int action_search=0x7f0b0011;
+        public static final int action_settings=0x7f0b0010;
         public static final int btnAddList=0x7f0b000a;
         public static final int btnAddNote=0x7f0b0009;
         public static final int btnAddPicture=0x7f0b000b;
@@ -50,8 +51,10 @@ public final class R {
         public static final int etTitle=0x7f0b0003;
         public static final int gvNotes=0x7f0b000c;
         public static final int left_drawer=0x7f0b0002;
+        public static final int llNoteItem=0x7f0b000d;
         public static final int tvLastEdit=0x7f0b0007;
-        public static final int tvNote=0x7f0b000d;
+        public static final int tvNote=0x7f0b000f;
+        public static final int tvNoteTitle=0x7f0b000e;
     }
     public static final class layout {
         public static final int activity_notes_new=0x7f030000;

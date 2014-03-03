@@ -75,8 +75,17 @@ public class AddNoteFragment extends Fragment implements OnClickListener {
 
 
 	private void addToMyNotes() {
-		if(etNote.getText().toString() != "") {
-			NotesAdapter.addItem("", etNote.getText().toString());
+		String title = "", note = "";
+		
+		title = etTitle.getText().toString();
+		note = etNote.getText().toString();
+		
+		if(!note.equals("")) {
+			NotesAdapter.addItem(title, note);
+		}
+		else {
+			// TODO: add toast msg
+			Log.d(LOG_TAG, "nothing to add here");
 		}
 	}
 

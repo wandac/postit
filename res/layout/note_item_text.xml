@@ -1,7 +1,26 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tvNote"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llNoteItem"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/light_yellow"
-    android:textColor="@color/black" >
-</TextView>
+    android:orientation="vertical"
+    android:padding="@dimen/note_padding" >
+
+    <TextView
+        android:id="@+id/tvNoteTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceSmall" >
+    </TextView>
+    
+    <TextView
+        android:id="@+id/tvNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceSmall" >
+    </TextView>
+
+</LinearLayout>
