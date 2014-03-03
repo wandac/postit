@@ -36,21 +36,22 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_search=0x7f0b000e;
-        public static final int action_settings=0x7f0b000d;
-        public static final int btnAddList=0x7f0b0009;
-        public static final int btnAddNote=0x7f0b0008;
-        public static final int btnAddPicture=0x7f0b000a;
-        public static final int btnRemindMe=0x7f0b0005;
+        public static final int action_search=0x7f0b000f;
+        public static final int action_settings=0x7f0b000e;
+        public static final int btnAddList=0x7f0b000a;
+        public static final int btnAddNote=0x7f0b0009;
+        public static final int btnAddPicture=0x7f0b000b;
+        public static final int btnAddToMyNotes=0x7f0b0005;
+        public static final int btnRemindMe=0x7f0b0006;
         public static final int content_frame=0x7f0b0001;
         public static final int drawer_layout=0x7f0b0000;
         public static final int etNote=0x7f0b0004;
-        public static final int etQuickNote=0x7f0b0007;
+        public static final int etQuickNote=0x7f0b0008;
         public static final int etTitle=0x7f0b0003;
-        public static final int gvNotes=0x7f0b000b;
+        public static final int gvNotes=0x7f0b000c;
         public static final int left_drawer=0x7f0b0002;
-        public static final int tvLastEdit=0x7f0b0006;
-        public static final int tvNote=0x7f0b000c;
+        public static final int tvLastEdit=0x7f0b0007;
+        public static final int tvNote=0x7f0b000d;
     }
     public static final class layout {
         public static final int activity_notes_new=0x7f030000;
@@ -70,6 +71,7 @@ public final class R {
         public static final int txt_add_note=0x7f070007;
         public static final int txt_add_picture=0x7f070008;
         public static final int txt_add_quick_note=0x7f070006;
+        public static final int txt_add_to_my_notes=0x7f07000e;
         public static final int txt_edited=0x7f07000b;
         public static final int txt_my_notes=0x7f070003;
         public static final int txt_note=0x7f070002;

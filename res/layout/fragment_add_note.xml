@@ -25,6 +25,13 @@
         android:imeOptions="actionDone"/>
     
     <Button 
+        android:id="@+id/btnAddToMyNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_add_to_my_notes"
+        android:gravity="left"/>
+    
+    <Button 
         android:id="@+id/btnRemindMe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
