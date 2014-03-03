@@ -81,6 +81,7 @@ public class AddNoteFragment extends Fragment implements OnClickListener {
 		note = etNote.getText().toString();
 		
 		if(!note.equals("")) {
+			// TODO: delete text from edit text
 			NotesAdapter.addItem(title, note);
 		}
 		else {

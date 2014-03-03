@@ -57,7 +57,7 @@ public class NotesAdapter extends BaseAdapter {
 		
 		if(convertView == null) {
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-			convertView = inflater.inflate(R.layout.note_item_text, parent, false);
+			convertView = inflater.inflate(R.layout.note_item, parent, false);
 			
 			holder = new NoteViewHolder();
 			holder.tvNoteTitle = (TextView) convertView.findViewById(R.id.tvNoteTitle);

@@ -61,7 +61,7 @@ public final class R {
         public static final int drawer_list_item=0x7f030001;
         public static final int fragment_add_note=0x7f030002;
         public static final int fragment_notes=0x7f030003;
-        public static final int note_item_text=0x7f030004;
+        public static final int note_item=0x7f030004;
     }
     public static final class menu {
         public static final int note=0x7f0a0000;
