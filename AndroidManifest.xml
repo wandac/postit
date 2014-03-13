@@ -12,7 +12,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:name="com.example.postit.PostItApplication" >
         <activity
             android:name="com.example.postit.activity.NotesActivity"
             android:label="@string/txt_notes" >
