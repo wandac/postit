@@ -6,6 +6,7 @@ import java.util.List;
 import com.example.postit.R;
 import com.example.postit.fragments.AddNoteFragment;
 import com.example.postit.fragments.NotesFragment;
+import com.example.postit.fragments.NotesFragment.OnNoteSelectedListener;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -25,7 +26,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-public class NotesActivity extends Activity {
+public class NotesActivity extends Activity implements OnNoteSelectedListener {
 	private final String LOG_TAG = "NotesActivity";
 	
 	// UI
@@ -186,5 +187,11 @@ public class NotesActivity extends Activity {
         setTitle(mainMenuTitles[position]);
         drawerLayout.closeDrawer(drawerList);
     }
+
+	@Override
+	public void onNoteSelected(int position) {
+		// TODO Auto-generated method stub
+		Log.d(LOG_TAG, String.valueOf(position) + " note selected");
+	}
 
 }

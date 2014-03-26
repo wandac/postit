@@ -4,6 +4,7 @@ import com.example.postit.NotesData;
 import com.example.postit.PostItApplication;
 import com.example.postit.R;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -19,19 +22,38 @@ import android.widget.SimpleCursorAdapter;
 
 public class NotesFragment extends Fragment implements OnClickListener {
 	private static final String LOG_TAG = "NotesFragment";
+	PostItApplication postIt;
 	
 	// UI
 	private EditText etAddQuickNote;
 	private Button btnAddNote, btnAddList, btnAddPicture;
 	private GridView gvNotes;
 	
-//	public static NotesAdapter notesAdapter;
 	private SimpleCursorAdapter notesAdapter;
-	
-	PostItApplication postIt;
-
 	private Cursor cursor;
+	
+	private OnNoteSelectedListener mCallback;
+	
+	
+	// Container activity must implement this interface
+	public interface OnNoteSelectedListener {
+		public void onNoteSelected(int position);
+	} 
 
+	
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		
+		// This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception
+        try {
+            mCallback = (OnNoteSelectedListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnNoteSelectedListener");
+        }
+	}
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,6 +87,15 @@ public class NotesFragment extends Fragment implements OnClickListener {
 		notesAdapter = new SimpleCursorAdapter(this.getActivity(), R.layout.note_item, cursor, from, to);
 		gvNotes.setAdapter(notesAdapter);
 		
+		gvNotes.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// Send the event to the host activity
+		        mCallback.onNoteSelected(position);
+			}
+		});
 		
 		return rootView;
 	}
