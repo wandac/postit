@@ -1,7 +1,6 @@
 package com.example.postit.fragments;
 
 
-import com.example.postit.NotesAdapter;
 import com.example.postit.PostItApplication;
 import com.example.postit.R;
 
@@ -83,7 +82,6 @@ public class AddNoteFragment extends Fragment implements OnClickListener {
 		
 		if(!note.equals("")) {
 			// TODO: delete text from edit text
-			NotesAdapter.addItem(title, note);
 			
 			// Insert data
 			((PostItApplication) (getActivity().getApplication())).getNotesData().insert(title, note);

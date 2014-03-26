@@ -2,6 +2,7 @@ package com.example.postit;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
@@ -65,6 +66,17 @@ public class NotesData {
 		
 		// Close Database
 		db.close();
+	}
+	
+	
+	public Cursor query() {
+		// Open Database
+		SQLiteDatabase db = dbHelper.getReadableDatabase();
+		
+		// Get the data
+		// TODO order by created at
+		// SELECT * FROM notes ORDER BY _id DESC
+		return db.query(DbHelper.TABLE, null, null, null, null, null, C_ID + " DESC");
 	}
 	
 	/**
